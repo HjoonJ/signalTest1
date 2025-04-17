@@ -44,14 +44,6 @@ public class HoldSignal : Signal
         }
     }
 
-    public override void EndSignal(bool complete)
-    {
-        if (complete == true)
-        {
-            Destroy(signalObject);
-        }
-
-    }
 
 
 
