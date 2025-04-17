@@ -3,20 +3,35 @@ using UnityEngine;
 public class Signal : MonoBehaviour
 {
     public GameObject signalObject;
-    void Update()
+    public virtual void StartSignal(SignalMethod signalMethod = SignalMethod.Any, bool on = false)
     {
        
     }
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void EndSignal(bool complete)
     {
-        Debug.Log($"Signal OnTriggerEnter {other.gameObject.name}");
-
-        if (other.CompareTag("Player"))
+        if (complete ==true)
         {
-            Debug.Log($"Signal OnTriggerEnter Player {other.gameObject.name}");
-            
             Destroy(signalObject);
         }
+        
     }
+
+    public virtual void OnTriggerEnter(Collider other)
+    {
+        StartSignal();
+        if (other.CompareTag("Player"))
+        {
+            //Debug.Log($"Signal OnTriggerEnter Player {other.gameObject.name}");
+
+            EndSignal(true);
+        }
+    }
+}
+
+public enum SignalMethod
+{
+    Right,
+    Left,
+    Any,
 }
