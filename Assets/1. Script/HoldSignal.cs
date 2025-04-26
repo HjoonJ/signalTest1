@@ -1,10 +1,15 @@
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class HoldSignal : Signal
 {
     //1. 유지되고 있는 상태를 알아야됌
     //2. 현재 몇초가 지났는지 알아야됌
     //3. holdTime초가 지났을때 && 유지되고 있는 상태 일때 EndSignal(true) 함
+
+    public TMP_Text onText;
+    public Image timerBar;
+
 
     public float holdTime; //이 변수에 담긴 초 만큼 닿고 있어야 사라짐
 
@@ -19,6 +24,8 @@ public class HoldSignal : Signal
         {
             // 충돌 유지 중일 때 타이머 증가
             holdTimer += Time.deltaTime;
+
+            timerBar.fillAmount = (holdTime - holdTimer) / holdTime;
 
             // 설정된 시간 이상 유지되면 오브젝트를 파괴 
             if (holdTimer >= holdTime)
@@ -35,12 +42,16 @@ public class HoldSignal : Signal
         if (on == true)
         {
             holding = true;
+            onText.text = "On";
         }
         else if (on == false)
         {
             holding = false;
+            onText.text = "Off";
             holdTimer = 0f;
-            
+            timerBar.fillAmount = 1;
+
+
         }
     }
 
