@@ -4,22 +4,14 @@ using TMPro;
 using UnityEngine.Rendering;
 
 public class SequenceSignal : Signal
-{
-    public static SequenceSignal Instance;
-    
+{    
     public SequenceElement[] elements;
 
     public Image timerBar;
 
     public int nextNumber; //순차적으로 번호를 선택하게끔 만들기 위한 변수
 
-    public void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-    }
-
-
+ 
     public void Start()
     {
         int[] nums = new int[4];
@@ -36,6 +28,8 @@ public class SequenceSignal : Signal
             int number = nums[i];
 
             elements[i].SetNumber(number);
+
+            elements[i].gameObject.SetActive(true);
         
         }
 
@@ -67,14 +61,15 @@ public class SequenceSignal : Signal
         // 올바른 숫자라면 Destroy, 다음 숫자 대기
         if (sequenceElement.number == nextNumber)
         {
-            Destroy(sequenceElement.gameObject);
-            
+            sequenceElement.gameObject.SetActive(false);
+
             nextNumber++;
 
             // 모두 올바르게 터치 시 다음 스테이지
             if (nextNumber > elements.Length)
             {
-
+                EndSignal(true);
+                // 클리어!!
             }
         }
         else
@@ -87,6 +82,7 @@ public class SequenceSignal : Signal
     private void ResetSequence()
     {
         // 다시 시작!
+        Start();
 
     }
 

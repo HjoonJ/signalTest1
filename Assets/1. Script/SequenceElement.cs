@@ -7,6 +7,12 @@ public class SequenceElement : MonoBehaviour
     public int number;
     public TMP_Text numberText;
 
+    public SequenceSignal sSignal;
+
+    public void Start()
+    {
+        sSignal = GetComponentInParent<SequenceSignal>();
+    }
 
     public void SetNumber(int n) 
     { 
@@ -24,7 +30,7 @@ public class SequenceElement : MonoBehaviour
         
         if (other.CompareTag("Player"))
         {
-            //SequenceSignal.Instance.ElementTouched(this);
+            sSignal.ElementTouched(this);
         }
     }
 
