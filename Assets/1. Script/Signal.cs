@@ -3,6 +3,7 @@ using UnityEngine;
 public class Signal : MonoBehaviour
 {
     public GameObject signalObject;
+    public string key;
     public virtual void StartSignal(SignalMethod signalMethod = SignalMethod.Any, bool on = false)
     {
        
