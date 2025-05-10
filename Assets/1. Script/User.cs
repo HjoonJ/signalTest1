@@ -3,7 +3,7 @@ using UnityEngine;
 public class User : MonoBehaviour
 {
     public static User Instance;
-    public int curStage;
+    public int curStageLevel;
 
 
     private void Awake()

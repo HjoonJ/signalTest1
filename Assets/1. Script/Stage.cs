@@ -1,20 +1,31 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Stage : MonoBehaviour
 {
     public int stageLevel;
     public float timeLimit;
+
     public StageSignalInfo[] signalInfos; //스테이지 별 포함해야할 시그널들 정보
 
     public GameObject[] signalPrefabs; // 4개의 시그널 프리펩이 있을 예정
 
+    public List<Signal> cubeLists;
+
     public Vector3 minPosition;
     public Vector3 maxPosition;
 
-    // 이미 i 번째 스테이지가 게임매니저 start 함수에서 실행 중
-    // 
+    private void Awake()
+    {
+        cubeLists = new List<Signal>();
+    }
+
+
     public void SpawnSignals()
     {
+        // 매번 스폰할 때 기존 데이터는 클리어하기
+        cubeLists.Clear();
+
         for (int i = 0; i < signalInfos.Length; i++)
         {
             
@@ -40,10 +51,23 @@ public class Stage : MonoBehaviour
                             Random.Range(minPosition.z, maxPosition.z)
                         );
 
+                        // 생성 및 signalCube로 담김.
+                        GameObject signalCube = Instantiate(signalPrefabs[j]);
 
-                        Instantiate(signalPrefabs[j], spawnPos, Quaternion.identity);
+                        //cubeLists 변수에 생성된 큐브들 담기. 
+
+                        Signal spawnedSignal = signalCube.GetComponent<Signal>();
+                        
+                        if (spawnedSignal != null)
+                        {
+                            cubeLists.Add(spawnedSignal);
+
+                        }
+
+                        signalCube.transform.position = spawnPos;
+
                     }
-                    
+
 
 
                 }

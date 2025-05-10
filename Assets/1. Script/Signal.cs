@@ -4,6 +4,10 @@ public class Signal : MonoBehaviour
 {
     public GameObject signalObject;
     public string key;
+
+    public bool clear = false;
+
+
     public virtual void StartSignal(SignalMethod signalMethod = SignalMethod.Any, bool on = false)
     {
        
@@ -13,7 +17,13 @@ public class Signal : MonoBehaviour
     {
         if (complete ==true)
         {
-            Destroy(signalObject);
+            //Destroy(signalObject);
+            signalObject.SetActive(false);
+            clear = true;
+
+
+            // 클리어 됐는지 확인
+            GameManager.Instance.CheckClear();
         }
         
     }
