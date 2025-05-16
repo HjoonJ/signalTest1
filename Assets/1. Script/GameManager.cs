@@ -56,14 +56,14 @@ public class GameManager : MonoBehaviour
             // 시간의 흐름
             timer += Time.deltaTime;
 
-            timerBar.fillAmount = (curStage.timeLimit - timer) / curStage.timeLimit;
+            timerBar.fillAmount = (curStage.stageData.timeLimit - timer) / curStage.stageData.timeLimit;
 
 
 
             // 현재 생성된 모든 시그널큐브들의 clear 상태가 true일때,
             // 이말인 즉슨 Stage에 있는 cubeLists 에 담겨 있는 모든 시그널큐브들의 clear 상태가 true 일때
 
-            if (timer >= curStage.timeLimit)
+            if (timer >= curStage.stageData.timeLimit)
             {
                 GameOver();
 
@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("클리어 실패");
+        ResultCanvas.Instance.ShowResult(false);
         onGaming = false;
     }
 

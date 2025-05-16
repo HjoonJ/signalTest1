@@ -3,17 +3,24 @@ using UnityEngine;
 
 public class Stage : MonoBehaviour
 {
-    public int stageLevel;
-    public float timeLimit;
 
-    public StageSignalInfo[] signalInfos; //스테이지 별 포함해야할 시그널들 정보
+    public StageData stageData;
+
+
+    public int stageLevel;
+
+    //public float timeLimit;
+
+    //public StageSignalInfo[] signalInfos; //스테이지 별 포함해야할 시그널들 정보
+
+    //public Vector3 minPosition;
+    //public Vector3 maxPosition;
+
 
     public GameObject[] signalPrefabs; // 4개의 시그널 프리펩이 있을 예정
 
     public List<Signal> cubeLists;
 
-    public Vector3 minPosition;
-    public Vector3 maxPosition;
 
     private void Awake()
     {
@@ -26,11 +33,11 @@ public class Stage : MonoBehaviour
         // 매번 스폰할 때 기존 데이터는 클리어하기
         cubeLists.Clear();
 
-        for (int i = 0; i < signalInfos.Length; i++)
+        for (int i = 0; i < stageData.signalInfos.Length; i++)
         {
             
             // 여러개의 signalInfos 중 하나 선택하기
-            StageSignalInfo info = signalInfos[i];
+            StageSignalInfo info = stageData.signalInfos[i];
 
             for (int j = 0; j < signalPrefabs.Length; j++)
             {
@@ -46,9 +53,9 @@ public class Stage : MonoBehaviour
                     for (int k = 0; k < info.count; k++)
                     {
                         Vector3 spawnPos = new Vector3(
-                            Random.Range(minPosition.x, maxPosition.x),
-                            Random.Range(minPosition.y, maxPosition.y),
-                            Random.Range(minPosition.z, maxPosition.z)
+                            Random.Range(stageData.minPosition.x, stageData.maxPosition.x),
+                            Random.Range(stageData.minPosition.y, stageData.maxPosition.y),
+                            Random.Range(stageData.minPosition.z, stageData.maxPosition.z)
                         );
 
                         // 생성 및 signalCube로 담김.

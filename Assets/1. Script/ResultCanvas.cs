@@ -5,18 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class ResultCanvas : MonoBehaviour
 {
-    public static ResultCanvas Instance;
+    // 비활성화 되어 있는 게임오브젝트의 싱글톤 가져오기
+
+    private static ResultCanvas instance; //변수
+    public static ResultCanvas Instance //속성 = 변수 + 함수
+    {
+        get 
+        {
+            if (instance == null)
+                instance = FindFirstObjectByType<ResultCanvas>(FindObjectsInactive.Include);
+            
+            return instance;
+        } 
+    }
 
     public TMP_Text resultText;
     public Button nextBtn;
     public Button retryBtn;
 
-    public void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-    }
-
+  
     public void ShowResult(bool clear)
     {
         gameObject.SetActive(true);
@@ -26,11 +33,13 @@ public class ResultCanvas : MonoBehaviour
             resultText.text = "Clear!";
 
             nextBtn.gameObject.SetActive(true);
+            retryBtn.gameObject.SetActive(false);
         }
         else
         {
             resultText.text = "Fail!";
             retryBtn.gameObject.SetActive(true);
+            nextBtn.gameObject.SetActive(false);
         }
 
 
