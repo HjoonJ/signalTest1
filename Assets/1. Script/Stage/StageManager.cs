@@ -15,4 +15,9 @@ public class StageManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
     }
+
+    public StageData GetStageData(int stageLevel)
+    {
+        return stageDatas.Where(e => e.stageLevel == stageLevel).FirstOrDefault();
+    }
 }

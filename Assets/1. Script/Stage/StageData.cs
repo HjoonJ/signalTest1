@@ -5,6 +5,8 @@ public class StageData : ScriptableObject
 {
     public int stageLevel;
     public float timeLimit;
+    
+    public float[] timeStep;
 
     public StageSignalInfo[] signalInfos; 
 
