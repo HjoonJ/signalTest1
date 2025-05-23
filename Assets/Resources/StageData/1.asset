@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageLevel: 1
   timeLimit: 10
+  timeStep:
+  - 5
+  - 8
   signalInfos:
   - signalKey: Signal
     count: 4

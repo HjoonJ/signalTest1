@@ -33,6 +33,8 @@ public class ResultCanvas : MonoBehaviour
 
     public Image[] starImages;
 
+ 
+
     public void ShowResult(bool clear)
     {
         //현재 스테이지데이터
@@ -43,11 +45,18 @@ public class ResultCanvas : MonoBehaviour
         //1.배열을 통해서 starCount 변수 결정하기
         //2.스테이지의 클리어 시 획득한 별 개수 저장하기
 
+        for (int i = 0; starImages.Length > 0; i++)
+        {
+            starImages[i].gameObject.SetActive(false);
+        }
+
+
         starCount = 1;
         for (int i = 0; i < curStageData.timeStep.Length; i++)
         { 
             if (curStageData.timeStep[i] >= curTimer)
             {
+                //starCount = 3 - i;
                 // 별 3개
                 if (i == 0)
                 {
@@ -75,6 +84,12 @@ public class ResultCanvas : MonoBehaviour
         {
             resultText.text = "Clear!";
 
+            // for 문으로 짜보기.
+            //for (int i = 0; i < starCount; i++)
+            //{
+            //    starImages[i].gameObject.SetActive(true);
+            //}
+
             if (starCount == 3) 
             {
                 starImages[0].gameObject.SetActive(true);
@@ -101,6 +116,8 @@ public class ResultCanvas : MonoBehaviour
             nextBtn.gameObject.SetActive(false);
         }
 
+        // 유저데이터 저장하기.
+        User.Instance.SaveClearStage(curStageData.stageLevel, starCount, clear);
 
     }
 
@@ -116,11 +133,7 @@ public class ResultCanvas : MonoBehaviour
         User.Instance.curStageLevel++;
         SceneManager.LoadScene("InGame");
 
-        for (int i = 0; starImages.Length > 0; i++)
-        {
-            starImages[i].gameObject.SetActive(false);
-        
-        }
+     
 
         //GameManager.Instance.GoNextStage();
         //gameObject.SetActive(false);

@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36c4dcd4e37e1445819aa9d05c1b3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageData: {fileID: 0}
+  stageData: {fileID: 11400000, guid: 9c8d586a98c25e34bb6b1e40d0ea9042, type: 2}
   stageLevel: 4
   signalPrefabs:
   - {fileID: 3736002560832607860, guid: cce448f10b6bb864d8c619cae0f2c880, type: 3}
@@ -1352,7 +1352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36c4dcd4e37e1445819aa9d05c1b3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageData: {fileID: 0}
+  stageData: {fileID: 11400000, guid: 69eec21d23f52034d9a33a8178f7065f, type: 2}
   stageLevel: 2
   signalPrefabs:
   - {fileID: 3736002560832607860, guid: cce448f10b6bb864d8c619cae0f2c880, type: 3}
@@ -1772,7 +1772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36c4dcd4e37e1445819aa9d05c1b3f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageData: {fileID: 0}
+  stageData: {fileID: 11400000, guid: e0eed27e9ae6d4b479ee3845017fc8d8, type: 2}
   stageLevel: 3
   signalPrefabs:
   - {fileID: 3736002560832607860, guid: cce448f10b6bb864d8c619cae0f2c880, type: 3}
@@ -1874,7 +1874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &995297358
 MonoBehaviour:
   m_ObjectHideFlags: 0
