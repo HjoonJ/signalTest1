@@ -15,8 +15,6 @@ public class User : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // 생략가능?
-            userData = new UserData();
         }
 
     }
@@ -29,7 +27,6 @@ public class User : MonoBehaviour
         if (userData == null) 
         {
             userData = new UserData();
-
 
         }
 
@@ -47,6 +44,34 @@ public class User : MonoBehaviour
         }
 
         //덮어쓰기? (기존 데이터 상황 파악 후)
+        //1. 리스트 중에 같은 스테이지 레벨이 있는지 찾기
+        //2. 같은 스테이지 레벨을 찾았으면, 그 리스트의 스타카운트 값을 비교해서 더 높은 값으로 저장.
+        
+        // 기존에 리스트에 무언가 담겨 있을 경우
+        for (int i = 0; i < userData.userStages.Count; i++) 
+        { 
+            if (userData.userStages[i].stageLevel == stageLv)
+            {
+                if (userData.userStages[i].starCount < starCount)
+                {
+
+                    userData.userStages[i].starCount = starCount;
+                    
+                    SaveManager.SaveData<UserData>("userData", userData);
+                }
+
+                //함수를 즉시 종료
+                return;
+
+
+            }
+            
+        
+        }
+
+        // 리스트에 해당 레벨이 담겨 있지 않을 때
+
+
 
         UserStage stage = new UserStage();
 
