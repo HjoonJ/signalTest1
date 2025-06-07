@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
         //유저가 가지고 있는 curStage 변수의 값을 활용해서 켠다!!
         int index = User.Instance.curStageLevel;
 
+
+        Debug.Log($"게임매니저 Start() {index}");
         for (int i = 0; i < stages.Length; i++)
         {
             stages[i].gameObject.SetActive(false);
@@ -135,6 +137,7 @@ public class GameManager : MonoBehaviour
 
     public void CheckClear()
     {
+        Debug.Log("게임매니저 클리어");
         allCleared = true;
 
         for (int i = 0; i < curStage.cubeLists.Count; i++)
@@ -150,6 +153,7 @@ public class GameManager : MonoBehaviour
 
         if (allCleared == true)
         {
+            Debug.Log("if (allCleared == true) 게임매니저 클리어");
             StageClear();
         }
     }

@@ -15,6 +15,7 @@ public class Signal : MonoBehaviour
 
     public virtual void EndSignal(bool complete)
     {
+        Debug.Log("¥Í¿Ω");
         if (complete ==true)
         {
             //Destroy(signalObject);

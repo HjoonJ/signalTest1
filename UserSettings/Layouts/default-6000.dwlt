@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1698
     height: 971
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -370,7 +370,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 43688
+  m_LastSelectedObjectID: 44676
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -513,7 +513,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 20fbffff
+      m_ExpandedIDs: 0097ffff1a9afffff89ffffff0b1ffff1cf3ffffdef3ffff20fbfffff4fffffffea40000d6aa000084ae0000bcb00000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1187,9 +1187,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0, y: 1, z: 0.038071662}
+    m_Target: {x: -0.93299115, y: 0.3637581, z: -0.55224514}
     speed: 2
-    m_Value: {x: 0, y: 1, z: 0.038071662}
+    m_Value: {x: -0.93299115, y: 0.3637581, z: -0.55224514}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1235,13 +1235,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Target: {x: -0.18039705, y: 0.71900797, z: -0.20271933, w: -0.63983494}
     speed: 2
-    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Value: {x: -0.18039705, y: 0.71900797, z: -0.20271932, w: -0.63983494}
   m_Size:
-    m_Target: 7.541553
+    m_Target: 4.072234
     speed: 2
-    m_Value: 7.541553
+    m_Value: 4.072234
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1319,7 +1319,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/1. Script
+    - Assets/4. Prefab
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1329,16 +1329,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/1. Script
+  - Assets/4. Prefab
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\newhh\signalTest1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 22a70000
-    m_LastClickedID: 42786
-    m_ExpandedIDs: 000000001ea7000020a7000022a70000
+    m_SelectedIDs: 8aa70000
+    m_LastClickedID: 42890
+    m_ExpandedIDs: 000000004aa700004ca700004ea70000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1367,7 +1367,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001ea7000020a7000022a70000
+    m_ExpandedIDs: 000000004aa700004ca700004ea70000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

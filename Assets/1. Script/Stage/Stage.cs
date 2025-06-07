@@ -31,6 +31,8 @@ public class Stage : MonoBehaviour
     public void SpawnSignals()
     {
         // 매번 스폰할 때 기존 데이터는 클리어하기
+        
+
         cubeLists.Clear();
 
         for (int i = 0; i < stageData.signalInfos.Length; i++)
@@ -45,6 +47,8 @@ public class Stage : MonoBehaviour
                 
                 Signal signalPreb = signalPrefabs[j].GetComponent<Signal>();
 
+                Debug.Log("시그널프리펩 담기");
+
                 // 어떤 프리펩을 생성시킬지 key 를 통해 찾기
                 if (signalPreb.key == info.signalKey)
                 {
@@ -58,6 +62,8 @@ public class Stage : MonoBehaviour
                             Random.Range(stageData.minPosition.z, stageData.maxPosition.z)
                         );
 
+
+                        Debug.Log("시그널 큐브 생성");
                         // 생성 및 signalCube로 담김.
                         GameObject signalCube = Instantiate(signalPrefabs[j]);
 

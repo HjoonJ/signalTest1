@@ -16,22 +16,32 @@ public class User : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
         }
-
-    }
-
-    public void Start()
-    {
         //데이터 로드 
         userData = SaveManager.LoadData<UserData>("userData");
 
-        if (userData == null) 
+        if (userData == null)
         {
             userData = new UserData();
 
         }
-
+        curStageLevel = GetLastStage();
     }
 
+
+    public int GetLastStage()
+    {
+
+        int stageLevel = 1;
+
+        for (int i = 0; i < userData.userStages.Count; i++)
+        {
+            if (userData.userStages[i].starCount > 0)
+            {
+                stageLevel++;
+            }
+        }
+        return stageLevel;
+    }
 
     //클리어 시 현재 스테이지 레벨 + 별 개수를 얻어서 UserData에 저장시키기. 
     // 현재 스테이지 레벨은 GameManager.Instance.curStage.stageLevel
@@ -91,7 +101,7 @@ public class User : MonoBehaviour
 
 }
 
-[System.Serializable]
+[System.Serializable] //직렬화(객체) + 이 클래스로 만들어진 객체를 인스펙터 창에 표현해 줌.
 public class UserData
 {
     // 1. 유저가 어떤 스테이지까지 클리어 했는가
