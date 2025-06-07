@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 22093478}
   - component: {fileID: 22093477}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: LobbyCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +217,7 @@ RectTransform:
   - {fileID: 1004742791}
   - {fileID: 1881145593}
   - {fileID: 318589196}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 592639536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -480,7 +480,8 @@ Transform:
   m_LocalPosition: {x: 272.6318, y: 138.39511, z: -5.0005126}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 22093480}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1004742790
@@ -1604,7 +1605,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1371265966}
   - {fileID: 2099964373}
-  - {fileID: 22093480}
   - {fileID: 149866285}
   - {fileID: 592639536}
   - {fileID: 1936192772}
