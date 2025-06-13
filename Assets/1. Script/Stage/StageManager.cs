@@ -3,7 +3,9 @@ using System.Linq;
 public class StageManager : MonoBehaviour
 {
     public static StageManager Instance;
-    public StageData[] stageDatas;
+    
+    // 각 스테이지들을 만들기 편하게! 정보를 제공하는 데이터들이 각 스테이지 별로 담겨 있는 배열 
+    public StageData[] stageDatas; // 현재 스테이지가 몇개 있는지도 알수 있음
     private void Awake()
     {
         if (Instance == null)

@@ -50,7 +50,7 @@ public class Stage : MonoBehaviour
                 Debug.Log("시그널프리펩 담기");
 
                 // 어떤 프리펩을 생성시킬지 key 를 통해 찾기
-                if (signalPreb.key == info.signalKey)
+                if (signalPreb.key == info.signalKey) // 참이 될까?
                 {
 
                     // count 수만큼 생성

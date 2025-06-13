@@ -18,7 +18,7 @@ MonoBehaviour:
   - 5
   - 8
   signalInfos:
-  - signalKey: Signal
+  - signalKey: Normal
     count: 2
   - signalKey: Hold
     count: 2

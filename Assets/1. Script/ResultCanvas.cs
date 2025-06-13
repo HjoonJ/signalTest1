@@ -45,6 +45,11 @@ public class ResultCanvas : MonoBehaviour
         //1.배열을 통해서 starCount 변수 결정하기
         //2.스테이지의 클리어 시 획득한 별 개수 저장하기
 
+
+        //***이부분에서 에러 발생!!
+
+        gameObject.SetActive(true);
+
         for (int i = 0; starImages.Length > 0; i++)
         {
             starImages[i].gameObject.SetActive(false);
@@ -78,7 +83,7 @@ public class ResultCanvas : MonoBehaviour
 
         //starCount 값에 따라서 스타 이미지 표시 UI 처리하기.
 
-        gameObject.SetActive(true);
+        //gameObject.SetActive(true);
 
         if (clear == true)
         {
